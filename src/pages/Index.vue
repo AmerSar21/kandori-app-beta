@@ -1,11 +1,6 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+    <q-btn label="Restaurant" to="/resto"></q-btn>
   </q-page>
 </template>
 
