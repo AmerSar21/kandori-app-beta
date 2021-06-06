@@ -15,20 +15,27 @@
           KANDORI
         </q-toolbar-title>
 
+        <q-btn-toggle
+          v-model="model"
+          flat
+          stretch
+          toggle-color="yellow"
+          :options="[
+            { label: 'HOME', value: 'one' },
+            { label: 'ABOUT', value: 'two' },
+            { label: 'SERVICES', value: 'three' }
+          ]"
+        />
       </q-toolbar>
     </q-header>
 
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
       bordered
       content-class="bg-grey-1"
     >
       <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
+        <q-item-label header class="text-grey-8">
           Essential Links
         </q-item-label>
         <EssentialLink
@@ -46,7 +53,7 @@
 </template>
 
 <script lang="ts">
-import EssentialLink from 'components/EssentialLink.vue'
+import EssentialLink from 'components/EssentialLink.vue';
 
 const linksData = [
   {
@@ -101,5 +108,10 @@ import { Vue, Component } from 'vue-property-decorator';
 export default class MainLayout extends Vue {
   leftDrawerOpen = false;
   essentialLinks = linksData;
+  data() {
+    return {
+      model: 'one'
+    }
+  }
 }
 </script>
