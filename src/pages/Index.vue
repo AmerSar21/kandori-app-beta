@@ -96,6 +96,8 @@
           label-color="primary"
           color="primary"
         />
+
+        <q-btn label="click me!" color="primary" to="/resto"></q-btn>
       </div>
     </div>
   </q-page>
