@@ -113,7 +113,11 @@
           <q-tab-panel name="reviews">
             <div class="text-h6">Reviews & Feed Backs</div>
             <div class="q-pa-md text-left" style="full-width">
-              <q-list v-for="(item, index) of Feedbacks" :key="item.user" v-bind="item">
+              <q-list
+                v-for="(item, index) of Feedbacks"
+                :key="item.user"
+                v-bind="item"
+              >
                 <q-item>
                   <q-item-section>
                     <q-item-label>{{ item.user }}</q-item-label>
