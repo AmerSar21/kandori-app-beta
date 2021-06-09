@@ -1,46 +1,28 @@
 <template>
-  <q-page class="flex-center q-pa-md">
-    <div class="items-center text-center" :class="$q.screen.lt.xl ? '' : 'row'">
-      <!-- <q-card class="bg-white-5 q-pa-xl col-6">
-        <q-card-section>
-          <q-input
-            v-model="search"
-            debounce="500"
-            filled
-            placeholder="Search Kandori.."
-          >
-            <template v-slot:append>
-              <q-icon name="search" />
-            </template>
-          </q-input>
-        </q-card-section>
-      </q-card>
-      <br />
-      <q-card class="bg-white-5 q-pa-xl col-6">
-        <q-card-section> </q-card-section>
-        <q-card-actions vertical align="center">
-          <q-card-actions
-            ><q-btn label="Restaurant" to="/resto"></q-btn>
-          </q-card-actions>
-        </q-card-actions>
-      </q-card> -->
-      <div
-        class="text-center"
-        :class="$q.screen.lt.md ? 'q-pt-md' : 'q-py-md q-pt-xl'"
-      >
+  <q-page class="flex-center">
+    <div>
+      <q-parallax :height="400" :speed="0.5">
+        <template v-slot:media>
+          <img src="~assets/images/inf1.jpg" />
+        </template>
         <div
-          class="text-primary"
+          class="text-white"
           :class="$q.screen.lt.md ? 'text-h3' : 'text-h1'"
         >
-          KOMAN TANO!
+          KANDORI
         </div>
         <div
-          class="text-grey-9"
+          class="text-white"
           :class="$q.screen.lt.md ? 'text-subtitle1' : 'text-h5'"
         >
-          Giving your hunger a new option
+          A one-stop shop for your cravings!!
         </div>
-      </div>
+      </q-parallax>
+    </div>
+    <div
+      class="items-center text-center q-pa-xl"
+      :class="$q.screen.lt.xl ? '' : 'row'"
+    >
       <div
         class="flex flex-center"
         :class="$q.screen.lt.md ? 'q-pt-lg' : 'q-pt-xl q-pb-lg'"
@@ -99,6 +81,35 @@
 
         <q-btn label="click me!" color="primary" to="/resto"></q-btn>
       </div>
+    </div>
+    <div>
+      <q-parallax :height="400" :speed="0.5">
+        <template v-slot:media>
+          <img src="~assets/images/bc1.jpg" />
+        </template>
+        <div
+          class="text-white"
+          :class="$q.screen.lt.md ? 'text-h3' : 'text-h1'"
+        >
+          ABOUT
+        </div>
+      </q-parallax>
+    </div>
+    <div>
+      <q-parallax :height="400" :speed="0.5"> </q-parallax>
+    </div>
+    <div>
+      <q-parallax :height="400" :speed="0.5">
+        <template v-slot:media>
+          <img src="~assets/images/bc2.jpg" />
+        </template>
+        <div
+          class="text-white"
+          :class="$q.screen.lt.md ? 'text-h3' : 'text-h1'"
+        >
+          SERVICES
+        </div>
+      </q-parallax>
     </div>
   </q-page>
 </template>

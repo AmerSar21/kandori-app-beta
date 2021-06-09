@@ -223,5 +223,6 @@ img {
 }
 .q-tab-panels {
   position: absolute;
+  width: 100%;
 }
 </style>
