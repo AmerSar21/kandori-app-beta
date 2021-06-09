@@ -17,6 +17,7 @@
 
         <q-btn-toggle
           v-model="model"
+          v-if="!$q.screen.lt.md"
           flat
           stretch
           toggle-color="yellow"
@@ -26,14 +27,27 @@
             { label: 'SERVICES', value: 'three' }
           ]"
         />
+        <q-btn v-if="$q.screen.lt.md" flat round dense icon="more_vert">
+          <q-menu auto-close>
+            <q-list style="min-width: 100px">
+              <q-item clickable>
+                <q-item-section>Settings</q-item-section>
+              </q-item>
+              <q-separator dark />
+              <q-item clickable>
+                <q-item-section>Help &amp; Feedback</q-item-section>
+              </q-item>
+              <q-separator dark />
+              <q-item clickable to="/" v-close-popup>
+                <q-item-section>Logout</q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-btn>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      bordered
-      content-class="bg-grey-1"
-    >
+    <q-drawer v-model="leftDrawerOpen" bordered content-class="bg-grey-1">
       <q-list>
         <q-item-label header class="text-grey-8">
           Essential Links
@@ -111,7 +125,7 @@ export default class MainLayout extends Vue {
   data() {
     return {
       model: 'one'
-    }
+    };
   }
 }
 </script>
