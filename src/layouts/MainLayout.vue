@@ -31,15 +31,15 @@
           <q-menu auto-close>
             <q-list style="min-width: 100px">
               <q-item clickable>
-                <q-item-section>Settings</q-item-section>
+                <q-item-section>Home</q-item-section>
               </q-item>
               <q-separator dark />
               <q-item clickable>
-                <q-item-section>Help &amp; Feedback</q-item-section>
+                <q-item-section>About</q-item-section>
               </q-item>
               <q-separator dark />
-              <q-item clickable to="/" v-close-popup>
-                <q-item-section>Logout</q-item-section>
+              <q-item clickable>
+                <q-item-section>Services</q-item-section>
               </q-item>
             </q-list>
           </q-menu>
@@ -122,10 +122,7 @@ import { Vue, Component } from 'vue-property-decorator';
 export default class MainLayout extends Vue {
   leftDrawerOpen = false;
   essentialLinks = linksData;
-  data() {
-    return {
-      model: 'one'
-    };
-  }
+  model: string = 'one';
+
 }
 </script>

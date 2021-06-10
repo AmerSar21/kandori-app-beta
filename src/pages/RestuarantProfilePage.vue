@@ -30,7 +30,7 @@
             narrow-indicator
           >
             <q-tab name="home" label="Home" />
-            <q-tab name="menu" label="Signature" />
+            <q-tab name="menu" label="Best Sellers" />
             <q-tab name="photos" label="Photos" />
             <q-tab name="reviews" label="Reviews" />
           </q-tabs>
@@ -62,7 +62,7 @@
             </q-tab-panel>
 
             <q-tab-panel name="menu">
-              <div class="text-h6">Signature Dishes</div>
+              <div class="text-h6">Best Sellers</div>
               <div class="row q-pa-sm">
                 <p class="captions">
                   Signature Dishes: 1. The Food Court's Best: - Menu List: 1.
@@ -151,7 +151,7 @@
                   <br />
                   <q-input standout v-model="text" filled type="textarea" />
                   <br />
-                  <div class="row justify-end">
+                  <div class="row">
                     <q-btn color="primary" icon-right="send" label="Submit">
                       <template v-slot:loading>
                         <q-spinner-facebook />
@@ -169,40 +169,42 @@
 </template>
 
 <script lang="ts">
-export default {
-  data() {
-    return {
-      tab: 'home',
-      slide: 1,
-      autoplay: true,
-      email: '',
-      number: null,
-      text: '',
-      Feedbacks: [
-        {
-          user: 'John Carlos Laguna',
-          description: 'This restaurant is very good!!'
-        },
-        {
-          user: 'Anne Curtis',
-          description: 'This restaurant is very good!!'
-        },
-        {
-          user: 'Cristian Valdez',
-          description: 'This restaurant is very good!!'
-        },
-        {
-          user: 'Super Inggo',
-          description: 'This restaurant is very good!!'
-        },
-        {
-          user: 'Juan Ponce Enrile',
-          description: 'This restaurant is very good!!'
-        }
-      ]
-    };
-  }
-};
+import ExampleComponent from 'components/ClassComponent.vue';
+import { Vue, Component } from 'vue-property-decorator';
+
+@Component({
+  components: { ExampleComponent }
+})
+export default class RestaurantProfilePage extends Vue {
+  tab = 'home';
+  slide = 1;
+  autoplay = true;
+  email = '';
+  number = null;
+  text = '';
+  Feedbacks = [
+    {
+      user: 'John Carlos Laguna',
+      description: 'This restaurant is very good!!'
+    },
+    {
+      user: 'Anne Curtis',
+      description: 'This restaurant is very good!!'
+    },
+    {
+      user: 'Cristian Valdez',
+      description: 'This restaurant is very good!!'
+    },
+    {
+      user: 'Super Inggo',
+      description: 'This restaurant is very good!!'
+    },
+    {
+      user: 'Juan Ponce Enrile',
+      description: 'This restaurant is very good!!'
+    }
+  ];
+}
 </script>
 
 <style>
