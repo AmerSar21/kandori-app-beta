@@ -18,8 +18,6 @@
             <b>Food Court</b>
           </q-item-label>
           <p>"You'll find your cravings here!!"</p>
-          <q-btn color="primary" label="Order Now"></q-btn>
-
           <q-tabs
             v-model="tab"
             dense
@@ -164,6 +162,12 @@
           </q-tab-panels>
         </q-card-section>
       </q-card>
+      <q-page-sticky position="bottom-right" :offset="[48, 30]">
+        <q-btn v-if="$q.screen.lt.md" color="primary" icon="local_grocery_store" size="20px" round></q-btn>      
+      </q-page-sticky>
+      <q-page-sticky position="bottom-right" :offset="[50, 48]">        
+        <q-btn v-if="!$q.screen.lt.md" color="primary" icon="local_grocery_store" label="Order Now"></q-btn>
+      </q-page-sticky>
     </div>
   </q-page>
 </template>
